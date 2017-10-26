@@ -1,0 +1,8 @@
+{
+  "name": "simple-todo-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/mzumi/simple-todo-app",
+  "author": "mzumi <masazumi.m@gmail.com>",
+  "license": "MIT"
+}
