@@ -6,7 +6,8 @@
   "author": "mzumi <masazumi.m@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "redux": "^3.7.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
