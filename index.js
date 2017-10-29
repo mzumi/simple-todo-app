@@ -1,35 +1,16 @@
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import { addTodo, toggleTodo, setVisiblityFilter } from './actions/index.js'
+import todoApp from './reducers'
+import App from './components/App'
 
-const store = createStore(function() { return 'Hello' });
+const store = createStore(todoApp);
 
-const addTodoElem = document.getElementById('addTodo');
-const input = addTodoElem.getElementsByTagName('input')[0];
-const button = addTodoElem.getElementsByTagName('button')[0];
-
-button.addEventListener('click', () => {
-  const todoText = input.value;
-  store.dispatch(addTodo(todoText));
-});
-
-const todoList = document.getElementById('todoList');
-const elements = todoList.getElementsByTagName("li");
-const listArray = [...elements]
-
-listArray.forEach((v, index) => {
-  v.addEventListener('click', e => {
-    store.dispatch(toggleTodo(index));
-  });
-});
-
-const links = document.getElementById('links');
-const children = links.childNodes;
-const childList = [...children];
-childList.filter(v => v.nodeName != '#text').forEach(v => {
-  v.addEventListener('click', e => {
-    const filterText = v.innerHTML;
-    store.dispatch(setVisiblityFilter(filterText));
-  });
-})
-
-
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);

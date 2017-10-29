@@ -1,4 +1,4 @@
-import { combileReducers } from 'redux'
+import { combineReducers } from 'redux'
 
 const todo = (state, action) => {
   switch (action.type) {
@@ -46,9 +46,9 @@ const visibilityFilter = (state = 'SHOW_ALL', action) => {
   }
 }
 
-const todoApp = combineReducers([
+const todoApp = combineReducers({
   todos,
   visibilityFilter
-]);
+});
 
 export default todoApp;
